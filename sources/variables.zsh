@@ -33,6 +33,7 @@ w=~/c/web
 wd=~/c/web/develop
 wdf=~/c/web/develop/packages/web-framework-core
 wdi=~/c/web/develop/packages/web-info-management-modules
+wdp=~/c/web/develop/packages
 wds=~/c/web/develop/packages/web-service-desk-modules
 ws=~/c/web/switch
 wsf=~/c/web/switch/packages/web-framework-core
