@@ -1,4 +1,6 @@
 export EDITOR=nvim
+export FONT_NAME="SourceCodePro"
+export FONT_SIZE=16
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
 export NODE_EXTRA_CA_CERTS=~/c/certificates/npm-certificate
