@@ -1,8 +1,9 @@
-dmenu=~/dz/configs/dmenu
-dwm=~/dz/configs/dwm
+D=~/dz
+dmenu=~/dz/dmenu
+dwm=~/dz/dwm
 dz=~/dz
-g=~/dz/configs/git
-st=~/dz/configs/st
+g=~/dz/git
+st=~/dz/st
 v=~/dz/nvim
-x=~/dz/configs/x
-z=~/dz/configs/zsh
+x=~/dz/x
+z=~/dz/zsh

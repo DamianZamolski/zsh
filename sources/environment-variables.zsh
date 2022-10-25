@@ -1,9 +1,5 @@
 export EDITOR=nvim
-export FONT_NAME="SourceCodePro"
-export FONT_SIZE=16
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
-export NODE_EXTRA_CA_CERTS=~/c/certificates/npm-certificate
-export PATH=$PATH:~/dz/zsh/bin:~/.local/bin
+export PATH=$PATH:~/dz/zsh/bin
 export SAVEHIST=1000
-export _JAVA_AWT_WM_NONREPARENTING=1 # Fix Jetbrains
