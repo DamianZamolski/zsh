@@ -1,6 +1,7 @@
-D=~/dz
+B=~/bs
 bold_blue='\033[1;34m'
 bold_green='\033[1;32m'
+D=~/dz
 default_color='\033[0m'
 dmenu=~/dz/dmenu
 dwm=~/dz/dwm
