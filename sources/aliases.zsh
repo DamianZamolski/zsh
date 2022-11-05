@@ -106,5 +106,5 @@ alias yyrd='yarn && yarn run dev'
 alias yyrr='yarn && yarn run release'
 alias z='zip -r'
 ga() { git add $1 && git status --short; }
-gr() { git reset $1 && git status --short; }
+gr() { git reset --quiet $1 && git status --short; }
 pdf() { pandoc $1 --output $1.pdf; }
