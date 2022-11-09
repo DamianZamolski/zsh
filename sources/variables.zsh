@@ -1,5 +1,6 @@
 B=~/bs
 bba=~/bs/backend-archidoc
+bfc=~/bs/fnol-commons
 bfp=~/bs/frontend-portal
 bfq=~/bs/fnol-questionnarie
 bold_blue='\033[1;34m'
