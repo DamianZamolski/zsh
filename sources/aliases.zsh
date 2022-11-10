@@ -2,6 +2,7 @@ alias a='alsamixer'
 alias b='black'
 alias C='cp --recursive'
 alias c='xclip -selection clipboard'
+alias d='docker'
 alias D='mkdir'
 alias dt="date +'%Y-%m-%d %H:%M:%S'"
 alias e='npx eslint'
