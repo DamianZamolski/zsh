@@ -1,12 +1,12 @@
 B=~/bs
 ba=~/bs/backend-archidoc
+bfs=~/bs/backend-fnol-sav
 bold_blue='\033[1;34m'
 bold_green='\033[1;32m'
 D=~/dz
 default_color='\033[0m'
 dmenu=~/dz/dmenu
 dwm=~/dz/dwm
-dz=~/dz
 fc=~/bs/fnol-commons
 fp=~/bs/frontend-portal
 fq=~/bs/fnol-questionnarie
