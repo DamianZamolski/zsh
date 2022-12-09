@@ -5,6 +5,7 @@ alias c='xclip -selection clipboard'
 alias d='docker'
 alias D='mkdir'
 alias de='docker exec'
+alias deit='docker exec --interactive --tty'
 alias dk='docker kill'
 alias dp='docker ps'
 alias dt="date +'%Y-%m-%d %H:%M:%S'"

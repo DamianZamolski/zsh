@@ -3,6 +3,7 @@ ba=~/bs/backend-archidoc
 bfs=~/bs/backend-fnol-sav
 bold_blue='\033[1;34m'
 bold_green='\033[1;32m'
+br=~/bs/backend-rewards
 D=~/dz
 default_color='\033[0m'
 dmenu=~/dz/dmenu
