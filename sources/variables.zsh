@@ -9,6 +9,7 @@ default_color='\033[0m'
 dmenu=~/dz/dmenu
 dwm=~/dz/dwm
 fc=~/bs/fnol-commons
+fe=~/bs/frontend-epayment
 fp=~/bs/frontend-portal
 fq=~/bs/fnol-questionnarie
 g=~/dz/git
