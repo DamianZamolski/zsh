@@ -68,6 +68,7 @@ alias gchm='gch master'
 alias gcl='git clone'
 alias gcnv='git commit --no-verify'
 alias gd='git diff HEAD'
+alias gdlb='git branch | grep -v "^\*" | xargs git branch -D'
 alias gf='git fetch'
 alias gi='git init'
 alias gid='git init && git config user.email damian.zamola.zamolski@gmail.com'
@@ -139,6 +140,7 @@ alias K='pkill -f'
 alias kd='k --context dev --namespace dev-3'
 alias Kd='pkill -f discord'
 alias kdc='kd --command cronjobs'
+alias kdcm='kd --command configmaps'
 alias kdm='kd --command mappings'
 alias kdn='kd --command namespaces'
 alias kdp='kd --command pods'
@@ -201,6 +203,7 @@ alias nrs='nr start'
 alias nrsd='nr start:dev'
 alias nrsm='nr start:mocked'
 alias nrt='nr test -- --maxWorkers 3'
+alias nrtc='nr test:coverage -- --maxWorkers 3'
 alias nrtf='nr test:fix -- --maxWorkers 3'
 alias nrtfs='nrtf --silent'
 alias nrts='nrt --silent'
@@ -284,6 +287,7 @@ alias V!='nmcli connection down beesafe-vpn'
 alias v.='nvim .'
 alias V='nmcli connection up beesafe-vpn passwd-file ~/bs/vpn/password'
 alias v='nvim'
+alias venv='v .env'
 alias vza='v ~/dz/zsh/sources/aliases.zsh'
 alias vzv='v ~/dz/zsh/sources/variables.zsh'
 alias w='nmcli device wifi'
@@ -334,6 +338,7 @@ nila() { nil $(print-dependencies) }
 nilda() { nild $(print-dependencies) }
 nilf() { npm install --force $(append-@latest "$@") }
 nilfa() { nilf $(print-dependencies) }
+nipl() { npm install --save-prod $(append-@latest "$@") }
 padl() { pad $(append-@latest "$@") }
 pal() { pa $(append-@latest "$@") }
 papl() { pap $(append-@latest "$@") }
