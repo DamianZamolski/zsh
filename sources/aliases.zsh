@@ -322,7 +322,7 @@ alias Y='yay'
 alias YCC='yay -Scc --noconfirm '
 alias YR='yay -Rns --noconfirm'
 alias YRO='yay -Rns $(yay -Qdtq) --noconfirm'
-alias YU='yay --noconfirm'
+alias YY='yay --noconfirm'
 alias z='zip -r'
 b64() { echo -n $1 | base64 }
 db64() { echo -n $1 | base64 --decode }
