@@ -2,11 +2,12 @@ alias a='alias'
 alias ag='alias | G'
 alias b='bat'
 alias bgi='bw get item'
-alias BGP='bw generate -luns | c'
+alias BGP='bw generate --lowercase --uppercase --number --special | c'
 alias bs='bw sync'
 alias bt='bluetoothctl'
 alias btcg='bluetoothctl connect F4:2B:7D:13:4F:98'
 alias btcgi='bluetoothctl connect B0:38:E2:5D:2D:FC'
+alias btcp='bluetoothctl connect 70:1A:B8:66:A4:AD'
 alias btcs='bluetoothctl connect 40:72:18:AA:48:91'
 alias btdcg='bluetoothctl disconnect F4:2B:7D:13:4F:98'
 alias btdcgi='bluetoothctl disconnect B0:38:E2:5D:2D:FC'
@@ -15,7 +16,9 @@ alias C='cp --recursive'
 alias c='xclip -selection clipboard'
 alias cal='cal --monday'
 alias cb='gbc | c'
+alias chrome='google-chrome-stable'
 alias clcm='lcm | c'
+alias CP='cp --recursive'
 alias cr='echo -n $(basename $(pwd)) | c'
 alias crab='echo $(basename $(pwd))"\n"$(gbc) | c'
 alias d1r='curl --silent --user user:zhgwNMkvdVjn1Y36 http://digital-dev-dev-1-rabbitmq-amqp.beesafe.pl:15672/api/connections | jq'
@@ -53,9 +56,8 @@ alias F='touch'
 alias fgh='firefox-developer-edition https://github.com/sky-distribution/$(basename $(pwd))'
 alias fgha='firefox-developer-edition https://github.com/sky-distribution/$(basename $(pwd))/actions'
 alias fghp='firefox-developer-edition https://github.com/sky-distribution/$(basename $(pwd))/pulls'
-alias g='git'
 alias G='grep'
-alias gA='git add --all && git status --short'
+alias gA='g add --all && gs'
 alias gAc='gA && gc'
 alias gb='git branch'
 alias gba='git branch --all'
@@ -73,7 +75,7 @@ alias gCeDZ='git config user.email damian.zamola.zamolski@gmail.com'
 alias gcfxd='git clean -fxd'
 alias gch-='gch -'
 alias gch.='gch .'
-alias gch='git checkout'
+alias gch='g checkout'
 alias gchb='gch -b'
 alias gchd='gch development'
 alias gchm='gch master'
@@ -82,12 +84,14 @@ alias gcnv='git commit --no-verify'
 alias gd='git diff HEAD'
 alias gdlb='git branch | grep -v "^\*" | xargs git branch -D'
 alias gf='git fetch'
+alias ghpr='gh pr create --base development --body "" --title'
 alias gi='git init'
 alias gid='git init && git config user.email damian.zamola.zamolski@gmail.com'
 alias gl='git log --format="%C(auto)%h %s"'
 alias gL='git log'
 alias gm='git merge'
 alias gma='gm --abort'
+alias google-chrome='google-chrome-stable'
 alias gor.='gor .'
 alias gor='go run'
 alias gp='g pull'
@@ -134,7 +138,7 @@ alias gRao='git remote add origin'
 alias grep='grep --color=auto'
 alias grh='git reset HEAD'
 alias gRv='git remote --verbose'
-alias gs='git status --short 2> /dev/null || for repo in **/.git; do repo=$(dirname $repo); echo -e $bold_blue$repo $bold_green$(git -C $repo branch --show-current)$default_color; git -C $repo status --short; done'
+alias gs='g status --short'
 alias gS='git status'
 alias gsh='git stash'
 alias gshl='git stash list'
@@ -150,8 +154,17 @@ alias h='history 0'
 alias H='tldr'
 alias hg='history 0 | grep'
 alias k9='k9s --logoless'
-alias k9pb='k9s --context prod --namespace blue'
-alias k9pg='k9s --context prod --namespace green'
+alias k9b='k9s --context prod --namespace blue'
+alias k9bs='k9pb --command secrets'
+alias k9d1='k9d --namespace dev-1'
+alias k9d1p='k9d1 --command pods'
+alias k9d1s='k9d1 --command secrets'
+alias k9d2='k9d --namespace dev-2'
+alias k9d2p='k9d2 --command pods'
+alias k9d2s='k9d2 --command secrets'
+alias k9d='k9s --context dev'
+alias k9g='k9s --context prod --namespace green'
+alias k9gs='k9g --command secrets'
 alias k9u='k9s --context uat --namespace apps'
 alias k9up='k9u --command pods'
 alias k9us='k9u --command secrets'
@@ -235,6 +248,7 @@ alias pa='p add'
 alias pad='pa --save-dev'
 alias pap='pa --save-prod'
 alias pb='p build'
+alias pbi='p build:image'
 alias pd='p dev'
 alias pe='p e2e'
 alias pf.='p format .'
@@ -262,7 +276,9 @@ alias pr='p run'
 alias prm='p remove'
 alias prs='pr start'
 alias prsd='pr start:dev'
-alias pt='p test -- --maxWorkers 3'
+alias psd='pnpm start:dev'
+alias psi='p start:image'
+alias pt='p test --maxWorkers 3'
 alias pT='p TEST'
 alias ptc='pt --coverage'
 alias ptf='p test:fix --maxWorkers 3'
@@ -293,6 +309,7 @@ alias rnm='RF node_modules'
 alias S!='shutdown now'
 alias st='speedtest++'
 alias t='tldr'
+alias ur='curl --silent --user user:ZTm4KYUk97JsoHw5 http://digital-uat-apps-rabbitmq-amqp.beesafe.pl:15672/api/connections | jq'
 alias uz='unzip'
 alias V!='nmcli connection down vpn'
 alias v.='nvim .'
@@ -335,14 +352,18 @@ alias YCC='yay -Scc --noconfirm '
 alias YR='yay -Rns --noconfirm'
 alias YRO='yay -Rns $(yay -Qdtq) --noconfirm'
 alias YY='yay --noconfirm'
+alias YYi='YY --ignore=vcmi'
 alias YYS='YY -S'
 alias YYYc='YY -Yc'
 alias z='zip --recurse-paths'
 b64() { echo -n $1 | base64 --wrap 0}
 db64() { echo -n $1 | base64 --decode }
+downgrade-major() { pa $1@$(find-latest-minor $1 $(( $(get-major $1) - 1 ))) }
+find-latest-minor() { pnpm info $1 versions --json | jq --raw-output '[.[] | select(test("^'$2'[0-9.]*$"))] | last | .[0:rindex(".")]' }
 ga() { git add $@ && git status --short; }
 gchB() { gbD $1 && gchb $1 }
 gclb() { git clone git@github.com:sky-distribution/$1.git }
+get-major() { awk -F'"' '/"'$1'"/ { version = $4; sub(/^\^/, "", version); split(version, a, "."); print a[1] }' package.json }
 gr() { git reset --quiet $1 && git status --short; }
 nidl() { npm install --save-dev $(append-@latest "$@") }
 nidlf() { npm install --save-dev --force $(append-@latest "$@") }
@@ -358,9 +379,33 @@ pal() { pa $(append-@latest "$@") }
 papl() { pap $(append-@latest "$@") }
 papl() { pap $(append-@latest "$@") }
 pdf() { pandoc $1 --output $1.pdf; }
+runDeployWorkflow() { gh workflow run $1 --raw-field branch_name=$(git branch --show-current) --raw-field target=$2 }
 
-runDeployWorkflow() {
-  gh workflow run $1 --raw-field branch_name=$(git branch --show-current) --raw-field target=$2
+g() {
+  if [ -d .git ]; then
+    git "$@"
+  else
+    set +m
+    output_dir="$(mktemp --directory)"
+
+    repos=()
+    for git_dir in */.git; do
+      repo=$(dirname "$git_dir")
+      repos+=("$repo")
+      (
+        echo -e "$bold_blue$repo $bold_green$(git -C "$repo" branch --show-current)$default_color"
+        git -C "$repo" "$@"
+      ) > "$output_dir/$repo" 2>&1 &
+    done
+
+    wait
+
+    for repo in "${repos[@]}"; do
+      cat "$output_dir/$repo"
+    done
+
+    rm --recursive "$output_dir"
+  fi
 }
 
 deploy() {
@@ -369,11 +414,11 @@ deploy() {
   local DEPLOY_YML=.github/workflows/deploy.yml
   local DEPLOY_YAML=.github/workflows/deploy.yaml
   if [[ -f "$DIGITAL_CICD_YML" ]]; then
-    runDeployWorkflow $DIGITAL_CICD_YML $1
+    runDeployWorkflow $DIGITAL_CICD_YML $environment
   elif [[ -f "$DEPLOY_YML" ]]; then
-    gh workflow run $DEPLOY_YML --raw-field environment=$environment --raw-field branch=$(git branch --show-current)
+    runDeployWorkflow $DEPLOY_YML $environment
   elif [[ -f "$DEPLOY_YAML" ]]; then
-    gh workflow run $DEPLOY_YAML --raw-field environment=$environment --raw-field branch=$(git branch --show-current)
+    runDeployWorkflow $DEPLOY_YAML $environment
   else
     echo No workflow file found
   fi
@@ -417,38 +462,34 @@ hc() {
   echo $(!$1) | c
 }
 
-jira() {
-  local type=$1
-  local summary=$2
-  local description=$3
-  local key=$(http --verify=no --auth dzamolski@beesafe.pl:$JIRA_TOKEN post https://skydistribution.atlassian.net/rest/api/2/issue fields:='{
-  "project":{"key":"BEE"},
-  "components":[{"id":"10064"}],
-  "customfield_10020":1320,
-  "issuetype":{"name":"'$type'"},
-  "summary":"'$summary'",
-  "description":"'$description'"
-}' | jq --raw-output '.key')
-echo https://skydistribution.atlassian.net/browse/$key
-}
-
-task() {
-  local summary=$1
-  local description=$2
-  jira Task "$summary" "$description"
-}
-
-bug() {
-  local summary=$1
-  jira Bug "$summary" "h1. *Środowiska (niepotrzebne usuń)*\n\nprod\n\nuat\n\ndev\n\nh1. *Kroki do reprodukcji (mile widziane linki, credentiale itp.)*\n\n…\n\nh1. *Oczekiwany rezultat (co się powinno stać?)*\n\n…\n\nh1. *Aktualny rezultat (co się dzieje?)*\n\n…\n\nh1. *Logi (pliki, linki)*\n\n…"
-}
-
 get-issue() {
   http --verify=no --auth dzamolski@beesafe.pl:$JIRA_TOKEN get https://skydistribution.atlassian.net/rest/api/2/issue/$1
 }
 
+jupiter() {
+  local summary=$1
+  local key=$(http --verify=no --auth dzamolski@beesafe.pl:$JIRA_TOKEN post https://skydistribution.atlassian.net/rest/api/2/issue fields:='{
+  "project":{"key":"BEE"},
+  "components":[{"id":"10064"}],
+  "customfield_10020":1320,
+  "issuetype":{"name":"Task"},
+  "summary":"'$summary'"
+}' | jq --raw-output '.key')
+echo https://skydistribution.atlassian.net/browse/$key
+}
+
+devops() {
+  local summary=$1
+  local key=$(http --verify=no --auth dzamolski@beesafe.pl:$JIRA_TOKEN post https://skydistribution.atlassian.net/rest/api/2/issue fields:='{
+  "project":{"key":"DEVOPS"},
+  "issuetype":{"name":"Task"},
+  "summary":"'$summary'"
+}' | jq --raw-output '.key')
+echo https://skydistribution.atlassian.net/browse/$key
+}
+
 bgp() {
-  bw get password $1 | c
+  bw get password $1 2> /dev/null | c
 }
 
 bcl() {
